@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>kern by lawrennd</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>kern</h1>
+        <p>Kernel toolbox for MATLAB.</p>
+
+        <p class="view"><a href="https://github.com/lawrennd/kern">View the Project on GitHub <small>lawrennd/kern</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lawrennd/kern/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lawrennd/kern/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lawrennd/kern">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="matlab-kernel-toolbox" class="anchor" href="#matlab-kernel-toolbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Matlab Kernel Toolbox</h1>
+
+<p>The KERN software can be downloaded <a href="http://www.cs.man.ac.uk/neill-bin/software/downloadForm.cgi?toolbox=kern">here</a>.</p>
+
+<h2>
+<a id="release-information" class="anchor" href="#release-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release Information</h2>
+
+<p><strong>Current release is 0.227</strong>.</p>
+
+<p>As well as downloading the KERN software you need to obtain the toolboxes specified below. <strong>These can be downloaded using the <em>same</em> password you get from registering for the KERN software.</strong></p>
+
+<p>|--------------------------------------------|-------------|
+| <strong>Toolbox</strong>                                | <strong>Version</strong> |
+| <a href="/optimi/downloadFiles/vrs0p132">OPTIMI</a>   | 0.132       |
+| <a href="/ndlutil/downloadFiles/vrs0p162">NDLUTIL</a> | 0.162       |
+| <a href="/netlab/downloadFiles/vrs3p3">NETLAB</a>     | 3.3         |
+| <a href="/erfcxz/downloadFiles/vrs0p001">ERFCXZ</a>   | 0.001       |
+| <a href="/erfz/downloadFiles/vrs0p001">ERFZ</a>       | 0.001       |</p>
+
+<p>Added diag covariance which uses the inputs as a diagonal covariance function (takes a one dimensional input only). Useful for having heteroschedastic noise. And index covariance functions which return a value if the two input indices are identical, and zero otherwise. Also includes Jaakko's NDDISIM and NDSIM covariance functions.</p>
+
+<h3>
+<a id="version-0226" class="anchor" href="#version-0226" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.226</h3>
+
+<p>Added velotrans covariance function which allows a moving field type covariance function with a constant velocity. Added rbfperiodic2 for periodic covariances with learnable period. Added various multioutput covariance functions for switched latent force models.</p>
+
+<h3>
+<a id="version-0225" class="anchor" href="#version-0225" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.225</h3>
+
+<p>Updates from Mauricio for the latest release of the MULTIGP toolbox.</p>
+
+<h3>
+<a id="version-0224" class="anchor" href="#version-0224" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.224</h3>
+
+<p>Added disimSample and simSample for sampling from these multioutput covariance functions. Michalis added kernel types rbfard2 and linard2 which use a slightly different formulation of the ARD parameters.</p>
+
+<h3>
+<a id="version-0223" class="anchor" href="#version-0223" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.223</h3>
+
+<p>Minor fix of "ard" kernel which somehow had a kernel computation bit placed in the parameter initialization --- cut and past mistake at some point.</p>
+
+<h3>
+<a id="version-0222" class="anchor" href="#version-0222" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.222</h3>
+
+<p>Removed division by kernel variance in kernels for computing the variance of the kernel. It causes numerical problems when the variance is small. Also changed mlp kernels so that the default variance distant from the origin is 1 instead of pi/2.</p>
+
+<h3>
+<a id="version-0221" class="anchor" href="#version-0221" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.221</h3>
+
+<p>Fixed code for reading in kernels from C++ files.</p>
+
+<h3>
+<a id="version-022" class="anchor" href="#version-022" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.22</h3>
+
+<p>Added Wiener kernel and various kernels for multi output kernels including white noise being propagated through the first and second order differential equation.</p>
+
+<h3>
+<a id="version-021" class="anchor" href="#version-021" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.21</h3>
+
+<p>Compatibility changes for NCCA and SGPLVM toolboxes.</p>
+
+<h3>
+<a id="version-02" class="anchor" href="#version-02" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.2</h3>
+
+<p>Further minor updates to kern for working with the new gpsim code (corrected handling of white kernel in multiKern).</p>
+
+<h3>
+<a id="version-0171" class="anchor" href="#version-0171" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.171</h3>
+
+<p>Minor changes to kernCreate for multiKern structures where there are different numbers of points in each block.</p>
+
+<h3>
+<a id="version-017" class="anchor" href="#version-017" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.17</h3>
+
+<p>Further improvements on the stability of the sim kernel. Addition of the driven input single input motif kernel (Antti Honkela) and the modification of the multiKern type to allow each block to have a different number of time points (Pei Gao).</p>
+
+<h3>
+<a id="version-0168" class="anchor" href="#version-0168" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.168</h3>
+
+<p>Found a bug in tensor gradient which meant gradients weren't being computed correctly with respect to X when more X and X2 are both provided as input arguments and both have length larger than 1.</p>
+
+<p>Antti Honkela improved the numerial stability of the sim kernel through judicious use of erfc.</p>
+
+<h3>
+<a id="version-0167" class="anchor" href="#version-0167" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.167</h3>
+
+<p>Added 'translate' kernel which allows wrapping of other kernels with a kernel that translates the input location. Useful for moving the non-stationarity around the input space.</p>
+
+<h3>
+<a id="version-0166" class="anchor" href="#version-0166" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.166</h3>
+
+<p>Added periodic version of RBF kernel (see Rasmussen and Williams pg 92 or Mackay's introduction to GPs (1998)) and periodic version of Gibbs's non-statinary kernel (see e.g. pg 93 of Rasmussen and Williams).</p>
+
+<h3>
+<a id="version-0165" class="anchor" href="#version-0165" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.165</h3>
+
+<p>Added flag which indicates whether or not a kernel is stationary. This can be used for speeding computations (stationary kernels have a constant diagonal). Also replaced calls to constraining functions with 'optimiDefaultConstraint' calls which return the default constraint (making it easier for the user to change).</p>
+
+<h3>
+<a id="version-0163" class="anchor" href="#version-0163" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.163</h3>
+
+<p>This release removes the stubs for several KernDiagGradX.m files, which were confusing kernDiagGradX.m, which assumes they only exist if the function is implemented. For the kernel types 'lin', 'poly', 'mlp', and their 'ard' counter-types, these files existed but weren't yet implemented.</p>
+
+<h3>
+<a id="version-0162" class="anchor" href="#version-0162" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.162</h3>
+
+<p>Added the Gibbs's non-stationary kernel, the rational quadratic kernel and the Matern kernel with nu = 3/2 and nu = 5/2.</p>
+
+<h3>
+<a id="verison-0161" class="anchor" href="#verison-0161" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verison 0.161</h3>
+
+<p>Introduced the single input motif kernel for the GPSIM toolbox. Also there is much more documentation, and a new file kernelGenerator.py for creating the basic files for your own kernels.</p>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>This toolbox allows computation of several different kernels and their gradients. You can add kernels to the toolbox by creating versions of the relevant files. Once added, they can be tested using the <code>kernTest</code>. For example you can test the RBF kernel by writing</p>
+
+<div class="highlight highlight-matlab"><pre><span class="pl-k">&gt;&gt; </span>kernTest(<span class="pl-s"><span class="pl-pds">'</span>rbf<span class="pl-pds">'</span></span>)</pre></div>
+
+<p>There are several kernels implemented, the ones that are being maintained for the latest release are:</p>
+
+<p><code>gibbs  gibbsperiodic  lin  linard  rbf  rbfard  rbfperiodic  matern32  matern52  ratquad  mlp  mlpard  poly  polyard  sim  lfm  disim  white  whitefixed  bias  cmpnd  wiener  gg  ou  lfmwhite  simwhite  ggwhite  gaussianwhite  gaussian  tensor (tensor kernels).  file (a kernel written in a file).</code></p>
+
+<p>A new kernel can be created using the compound kernel, <code>cmpnd</code> or the tensor kernel, <code>tensor</code>. The compound kernel is made up of sums of individual kernels. Most often you will need to create a kernel containing a base kernel (e.g. <code>rbf</code>) and adding a white noise kernel, <code>white</code> and perhaps a constant offset through the bias kernel <code>bias</code>. On initialisation most kernel parameters are set to 1. Exceptions are ARD scale parameters, the variance of the white and bias kernels and the weight and bias variances of the <code>mlp</code> kernels.</p>
+
+<h2>
+<a id="lfm-kernel" class="anchor" href="#lfm-kernel" aria-hidden="true"><span class="octicon octicon-link"></span></a>LFM Kernel</h2>
+
+<h3>
+<a id="fortran-compiler-for-lfm-kernel" class="anchor" href="#fortran-compiler-for-lfm-kernel" aria-hidden="true"><span class="octicon octicon-link"></span></a>FORTRAN Compiler for LFM Kernel</h3>
+
+<p>To install the compiler</p>
+
+<p>Go to <a href="http://www.g95.org/downloads.shtml">http://www.g95.org/downloads.shtml</a> and download the binary version suitable for your computer and operating system or compile the source code.</p>
+
+<p>In MATLAB, write</p>
+
+<div class="highlight highlight-matlab"><pre><span class="pl-k">&gt;&gt;  </span><span class="pl-k">mex</span><span class="pl-k"> -</span>setup</pre></div>
+
+<p>Then choose option 1 and make a copy <code>mexopts.sh</code> in your local directory. Change the name to <code>g95opts.sh</code> or whatever you prefer.</p>
+
+<p>Modify myopts.sh following the instructions in <a href="http://www.g95.org/howto.shtml#matlab">http://www.g95.org/howto.shtml#matlab</a></p>
+
+<p>When compiling in MATLAB, use the -f command to use your local <code>g95opts.sh</code> file, for example:</p>
+
+<pre><code>&gt;&gt; mex -f myopts.sh lfmComputeUpsilonMatrix.f
+</code></pre>
+
+<p>Page updated on Tue Aug 9 20:39:05 2011</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lawrennd">lawrennd</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-62968536-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
