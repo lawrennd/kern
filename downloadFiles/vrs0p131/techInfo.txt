@@ -1,0 +1,294 @@
+ [k, rbfPart, linearPart, n2] = ardKernCompute(kern, x, x2)
+
+ k = ardKernDiagCompute(kern, x)
+
+ gX = ardKernDiagGradX(kern, X)
+
+ ardKernDisplay(kern)
+
+ kern = ardKernExpandParam(kern, params)
+
+ params = ardKernExtractParam(kern)
+
+ gX = ardKernGradX(kern, X, X2)
+ function gX = ardKernGradXpoint(kern, x, X2)
+
+ g = ardKernGradient(kern, x, covGrad)
+
+ kern = ardKernParamInit(kern)
+
+ k = biasKernCompute(kern, x, x2)
+
+ k = biasKernDiagCompute(kern, x)
+
+ gX = biasKernDiagGradX(kern, X)
+
+ biasKernDisplay(kern)
+
+ kern = biasKernExpandParam(kern, params)
+
+ params = biasKernExtractParam(kern)
+
+ gX = biasKernGradX(kern, X, X2)
+
+ g = biasKernGradient(kern, x, covGrad)
+
+ kern = biasKernParamInit(kern)
+
+ k = cmpndKernCompute(kern, x, x2)
+
+ k = cmpndKernDiagCompute(kern, x)
+
+ gX = cmpndKernDiagGradX(kern, X)
+
+ cmpndKernDisplay(kern)
+
+ kern = cmpndKernExpandParam(kern, params)
+
+ params = cmpndKernExtractParam(kern)
+
+ gX = cmpndKernGradX(kern, X, X2)
+
+ g = cmpndKernGradient(kern, x, covGrad)
+
+ kern = cmpndKernParamInit(kern)
+
+ kern = cmpndKernReadParamsFromFID(kern, FID)
+
+ [kx, rbfPart, linearPart, n2] = computeKernel(x, lntheta, type, x2)
+
+ k = kernCompute(kern, x, x2)
+
+ kern = kernCreate(X, kernelType)
+
+ k = kernDiagCompute(kern, x, x2)
+
+ k = kernDiagGradX(kern, x, x2)
+
+ kernDisplay(kern)
+
+ kern = kernExpandParam(kern, params)
+
+ [params, names] = kernExtractParam(kern)
+
+ factors = kernFactors(kern, factorType)
+
+ g = kernGradX(kern, x, x2)
+
+ g = kernGradient(kern, x, covGrad)
+
+ G = kernGradientK(kern, x)
+
+ kern = kernParamInit(kern)
+
+ [u, v] = kernPca(kern, X, numEig)
+
+ g = kernPriorGradient(kern)
+
+ L = kernPriorLogProb(kern)
+
+ kern = kernReadFromFID(FID)
+
+ kern = kernReadParamsFromFID(kern, FID)
+
+ kern = kernSetWhite(kern, value)
+
+ kern = kernTest(kernType);
+
+ k = linKernCompute(kern, x, x2)
+
+ k = linKernDiagCompute(kern, x)
+
+ gX = linKernDiagGradX(kern, X)
+
+ linKernDisplay(kern)
+
+ kern = linKernExpandParam(kern, params)
+
+ params = linKernExtractParam(kern)
+
+ gX = linKernGradX(kern, X, X2)
+
+ g = linKernGradient(kern, x, covGrad)
+
+ kern = linKernParamInit(kern)
+
+ k = linardKernCompute(kern, x, x2)
+
+ k = linardKernDiagCompute(kern, x)
+
+ gX = linardKernDiagGradX(kern, X)
+
+ linardKernDisplay(kern)
+
+ kern = linardKernExpandParam(kern, params)
+
+ params = linardKernExtractParam(kern)
+
+ gX = linardKernGradX(kern, X, X2)
+
+ g = linardKernGradient(kern, x, covGrad)
+
+ kern = linardKernParamInit(kern)
+
+ kern = linearKernParamInit(kern)
+
+ [k, innerProd, arg, denom, numer] = mlpKernCompute(kern, x, x2)
+
+ k = mlpKernDiagCompute(kern, x)
+
+ gX = mlpKernDiagGradX(kern, X)
+ function gX = mlpKernDiagGradXpoint(kern, x)
+
+ mlpKernDisplay(kern)
+
+ kern = mlpKernExpandParam(kern, params)
+
+ params = mlpKernExtractParam(kern)
+
+ gX = mlpKernGradX(kern, X, X2)
+ function gX = mlpKernGradXpoint(kern, x, X2)
+
+ g = mlpKernGradient(kern, x, covGrad)
+
+ kern = mlpKernParamInit(kern)
+
+ [k, innerProd, arg, denom, numer, vec] = mlpardKernCompute(kern, x, x2)
+
+ k = mlpardKernDiagCompute(kern, x)
+
+ gX = mlpardKernDiagGradX(kern, X)
+ function gX = mlpardKernDiagGradXpoint(kern, x)
+
+ mlpardKernDisplay(kern)
+
+ kern = mlpardKernExpandParam(kern, params)
+
+ params = mlpardKernExtractParam(kern)
+
+ gX = mlpardKernGradX(kern, X, X2)
+ function gX = mlpardKernGradXpoint(kern, x, X2)
+
+ g = mlpardKernGradient(kern, x, covGrad)
+
+ kern = mlpardKernParamInit(kern)
+
+ k = polyKernCompute(kern, x, x2)
+
+ k = polyKernDiagCompute(kern, x)
+
+ gX = polyKernDiagGradX(kern, X)
+ function gX = polyKernDiagGradXpoint(kern, x)
+
+ polyKernDisplay(kern)
+
+ kern = polyKernExpandParam(kern, params)
+
+ params = polyKernExtractParam(kern)
+
+ gX = polyKernGradX(kern, X, X2)
+ function gX = polyKernGradXpoint(kern, x, X2)
+
+ g = polyKernGradient(kern, x, covGrad)
+
+ kern = polyKernParamInit(kern)
+
+ [k, innerProd, arg, denom, numer, vec] = polyardKernCompute(kern, x, x2)
+
+ k = polyardKernDiagCompute(kern, x)
+
+ gX = polyardKernDiagGradX(kern, X)
+ function gX = polyardKernDiagGradXpoint(kern, x)
+
+ polyardKernDisplay(kern)
+
+ kern = polyardKernExpandParam(kern, params)
+
+ params = polyardKernExtractParam(kern)
+
+ gX = polyardKernGradX(kern, X, X2)
+ function gX = polyardKernGradXpoint(kern, x, X2)
+
+ g = polyardKernGradient(kern, x, covGrad)
+
+ kern = polyardKernParamInit(kern)
+
+ g = pskernelGradient(lntheta, models, prior)
+
+ f = pskernelObjective(lntheta, models, prior)
+
+ [k, n2] = rbfKernCompute(kern, x, x2)
+
+ k = rbfKernDiagCompute(kern, x)
+
+ gX = rbfKernDiagGradX(kern, X)
+
+ rbfKernDisplay(kern)
+
+ kern = rbfKernExpandParam(kern, params)
+
+ params = rbfKernExtractParam(kern)
+
+ gX = rbfKernGradX(kern, X, X2)
+ function gX = rbfKernGradXpoint(kern, x, X2)
+
+ g = rbfKernGradient(kern, x, covGrad)
+
+ kern = rbfKernParamInit(kern)
+
+ [k, n2] = rbfardKernCompute(kern, x, x2)
+
+ k = rbfardKernDiagCompute(kern, x)
+
+ gX = rbfardKernDiagGradX(kern, X)
+
+ rbfardKernDisplay(kern)
+
+ kern = rbfardKernExpandParam(kern, params)
+
+ params = rbfardKernExtractParam(kern)
+
+ gX = rbfardKernGradX(kern, X, X2)
+ function gX = rbfardKernGradXpoint(kern, x, X2)
+
+ g = rbfardKernGradient(kern, x, covGrad)
+
+ kern = rbfardKernParamInit(kern)
+
+ [k, rbfPart, n2] = sqexpKernCompute(kern, x, x2)
+
+ k = sqexpKernDiagCompute(kern, x)
+
+ gX = sqexpKernDiagGradX(kern, x)
+
+ sqexpKernDisplay(kern)
+
+ kern = sqexpKernExpandParam(kern, params)
+
+ [params, transform] = sqexpKernExtractParam(kern)
+
+ gX = sqexpKernGradX(kern, X, X2)
+ function gX = sqexpKernGradXpoint(kern, x, X2)
+
+ g = sqexpKernGradient(kern, x, covGrad)
+
+ kern = sqexpKernParamInit(kern)
+
+ k = whiteKernCompute(kern, x, x2)
+
+ k = whiteKernDiagCompute(kern, x)
+
+ gX = whiteKernDiagGradX(kern, X)
+
+ whiteKernDisplay(kern)
+
+ kern = whiteKernExpandParam(kern, params)
+
+ params = whiteKernExtractParam(kern)
+
+ gX = whiteKernGradX(kern, X, X2)
+
+ g = whiteKernGradient(kern, x, covGrad)
+
+ kern = whiteKernParamInit(kern)
+
